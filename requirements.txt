@@ -1,0 +1,13 @@
+numpy
+tensorflow
+matplotlib
+cv2
+os
+timer-cm
+json
+argparse
+mediapipe
+multiprocessing
+collections
+scipy.io
+scipy.fftpack
