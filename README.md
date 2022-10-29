@@ -64,7 +64,9 @@ We experimented on two skeleton-based action recognition datasets: Kinetics-skel
 Kinetics is a dataset for action recognition that only provides raw video clips without skeleton data. First, we extracted skeletons from each frame in Kinetics by using MoveNet. We then run the json files of extracted skeletal data coordinates to our algorithms to output the reconstructed signal as the final compressed version. Our skeletal data is in 2D. 
 
 # Results
-The result of bits before and after compression tested on Kinetics datasets are shown as below. Compressed data is reduced to approximately 86% while maintaining video quality compared to state-of-art algorithms. The result of the 100 sampled data can be found in the folder of “test_data” under the name of “compression_error.xlsx". 
+The result of bits before and after compression tested on Kinetics datasets are shown as below. Compressed data is reduced to approximately 86% while maintaining video quality compared to state-of-art algorithms. The result of the 100 sampled data can be found in the folder of “test_data” under the name of “compression_error.xlsx".
+
+Link to Kinetics 400 dataset 100 data points: https://drive.google.com/drive/folders/1Z-XIzo95Cgr73IgALPRGPMlvbkN4HSVo?usp=sharing
 
 <img width="558" alt="Screen Shot 2022-10-28 at 5 28 25 PM" src="https://user-images.githubusercontent.com/57471582/198753416-fd0b203d-b3cf-4098-a80a-ee50b23effa1.png">
 
