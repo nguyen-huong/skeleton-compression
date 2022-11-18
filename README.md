@@ -27,7 +27,11 @@ This is the test for one video data from the action file of cartwheeling. The re
 ![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/57471582/198753163-f960eb15-e9f6-4cc8-aeb3-e1520fc4325b.gif)
 
 Original video:
-![cartwheeling-mv](https://user-images.githubusercontent.com/57471582/202817476-f7b3d6f6-3d61-43b1-be5a-1068025c151e.gif)
+
+
+https://user-images.githubusercontent.com/57471582/202817554-a0c970f4-42f7-474b-8968-401b0a60f04e.mov
+
+
 
 
 ## Real-time compression of the motion capture data
