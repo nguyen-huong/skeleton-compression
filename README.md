@@ -29,7 +29,10 @@ This is the test for one video data from the action file of cartwheeling. The re
 Original video:
 
 
-https://user-images.githubusercontent.com/57471582/202817554-a0c970f4-42f7-474b-8968-401b0a60f04e.mov
+https://user-images.githubusercontent.com/57471582/202817974-8e362cdf-6344-49e6-ab3e-379806a9ed5b.mov
+
+
+
 
 
 
