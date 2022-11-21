@@ -24,12 +24,10 @@ Compressed value in bits for each x and y coordinate sets.
 ## Visualization of the reconstructed signal from the compressed motion capture data
 This is the test for one video data from the action file of cartwheeling. The reconstruction signal of the compressed motion capture data is graphed and drew on to the video data to visualize the accuracy of our compression algorithm. The video data file can be found here: ​​https://drive.google.com/file/d/1EN_kW4dV4_1AfuweUttFjD2V1CKuZtcl/view?usp=sharing
 
-![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/57471582/198753163-f960eb15-e9f6-4cc8-aeb3-e1520fc4325b.gif)
-
-Original video:
 
 
-https://user-images.githubusercontent.com/57471582/202817974-8e362cdf-6344-49e6-ab3e-379806a9ed5b.mov
+https://user-images.githubusercontent.com/57471582/202965726-a05d6200-3d39-4616-a2b6-e08335592264.mov
+
 
 
 
