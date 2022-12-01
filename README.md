@@ -79,9 +79,12 @@ The result of bits before and after compression tested on Kinetics datasets are 
 
 Link to Kinetics 400 dataset  data points: https://drive.google.com/drive/folders/1Z-XIzo95Cgr73IgALPRGPMlvbkN4HSVo?usp=sharing
 
-<img width="558" alt="Screen Shot 2022-10-28 at 5 28 25 PM" src="https://user-images.githubusercontent.com/57471582/198753416-fd0b203d-b3cf-4098-a80a-ee50b23effa1.png">
+![bits](https://user-images.githubusercontent.com/57471582/205147042-a693f4c8-9469-42c2-bd76-2024c34d3671.jpg)
 
-<img width="558" alt="Screen Shot 2022-10-28 at 5 28 43 PM" src="https://user-images.githubusercontent.com/57471582/198753427-4665c6ca-a26d-40a6-ad4c-2567224365be.png">
+
+![Datasize](https://user-images.githubusercontent.com/57471582/205147065-e4849c20-ac02-4a5c-b9a2-c40010d1560b.jpg)
+
+
 
 ## Activity recognition performance: 
 We selected the following action classes provided—bowling, pullups, bench pressing, parkour, and cartwheeling for activity recognition performance from the Deepmind 400 Kinetics dataset[2] and resulted in an accuracy of 100% before and after if we use the original and the compressed signal. We have extracted on average 300 data points for each action, where 70% of the data is for training and 30% of the data is for testing.
