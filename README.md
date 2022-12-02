@@ -87,6 +87,7 @@ summary results, size, compression error (cm scale), have noises in kinetics dat
 
 scale are different from orange and blue curves, scale is different as show in left y axis for before, scale is different as shown in right y axis for 
 
+The graph illustrates the data size or file size once Posenet has saved the file in a stored location for the before results, and once reconstructed, the file size of the saved file after being stored. The yellow line represents the data size before compression, and the red line represents the data size after compression
 ![Datasize](https://user-images.githubusercontent.com/57471582/205147065-e4849c20-ac02-4a5c-b9a2-c40010d1560b.jpg)
 
 
