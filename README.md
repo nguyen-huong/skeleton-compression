@@ -80,7 +80,7 @@ The result of bits before and after compression tested on Kinetics datasets are 
 Link to Kinetics 400 dataset  data points: https://drive.google.com/drive/folders/1Z-XIzo95Cgr73IgALPRGPMlvbkN4HSVo?usp=sharing
 
 ![bits](https://user-images.githubusercontent.com/57471582/205147042-a693f4c8-9469-42c2-bd76-2024c34d3671.jpg)
-
+summary results, size, compression error (cm scale), have noises in kinetics data in cm so our measures are nearly lossless (reference in the paper), percentage before and 
 
 ![Datasize](https://user-images.githubusercontent.com/57471582/205147065-e4849c20-ac02-4a5c-b9a2-c40010d1560b.jpg)
 
