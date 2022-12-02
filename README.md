@@ -82,6 +82,8 @@ Link to Kinetics 400 dataset  data points: https://drive.google.com/drive/folder
 ![bits](https://user-images.githubusercontent.com/57471582/205147042-a693f4c8-9469-42c2-bd76-2024c34d3671.jpg)
 summary results, size, compression error (cm scale), have noises in kinetics data in cm so our measures are nearly lossless (reference in the paper), percentage before and 
 
+scale are different from orange and blue curves, scale is different as show in left y axis for before, scale is different as shown in right y axis for 
+
 ![Datasize](https://user-images.githubusercontent.com/57471582/205147065-e4849c20-ac02-4a5c-b9a2-c40010d1560b.jpg)
 
 
