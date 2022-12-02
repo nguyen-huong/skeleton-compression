@@ -61,7 +61,7 @@ cd skeleton_in_python
 python posenet.py –path ${PATH_TO_VIDEO} -store ${PATH_TO_STORAGE}
 ```
 
-By default,  we are using our proposed nonlinear quantization matrix as defined in the file quantizationmatrix.txt. However, if you want to use it you can define it here. We have already experimented with the choice of parameters, and heuristic parameters value are given in quantizationmatrix.txt and error of significance of 2 pixels per joint, but if you want to change the step size, you can do it here
+By default,  we are using our proposed nonlinear quantization matrix as defined in the file quantizationmatrix.txt. We have already experimented with the choice of parameters, and heuristic parameters value are given in quantizationmatrix.txt and error of significance of 2 pixels per join.  However, if you want to use it you can define it here. 
 
 ```
 python posenet.py –inc${CUSTOMIZE INCREMENT QUANTITY} –sub${CUSTOMIZE INITIAL INCREMENT VALUE}
