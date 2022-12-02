@@ -50,7 +50,8 @@ Other Python libraries can be installed by pip install -r requirements.txt
 ```
 git clone --recursive <github link>
 
-pip install -r /path/to/requirements.txt
+cd skeleton-in-python/
+pip install -r requirements.txt
 
 cd skeleton_in_python
 ```
