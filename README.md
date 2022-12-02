@@ -48,7 +48,7 @@ Other Python libraries can be installed by pip install -r requirements.txt
 
 # Installation
 ```
-git clone --recursive <github link>
+git clone --recursive https://github.com/nguyen-huong/skel-compression.git
 
 cd skeleton-in-python/
 pip install -r requirements.txt
