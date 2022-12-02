@@ -80,6 +80,8 @@ The result of bits before and after compression tested on Kinetics datasets are 
 
 Link to Kinetics 400 dataset  data points: https://drive.google.com/drive/folders/1Z-XIzo95Cgr73IgALPRGPMlvbkN4HSVo?usp=sharing
 
+Our data have noises in cm and our measures are nearly lossless. The number of bits before are reflected in blue, with a different scale as shown in left axis. The number of bits after are reflected in orange with a different scale as shown in right axis. 
+
 ![bits](https://user-images.githubusercontent.com/57471582/205147042-a693f4c8-9469-42c2-bd76-2024c34d3671.jpg)
 summary results, size, compression error (cm scale), have noises in kinetics data in cm so our measures are nearly lossless (reference in the paper), percentage before and 
 
