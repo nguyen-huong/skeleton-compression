@@ -83,12 +83,11 @@ Link to Kinetics 400 dataset  data points: https://drive.google.com/drive/folder
 Our data have noises in cm and our measures are nearly lossless. The number of bits before are reflected in blue, with a different scale as shown in left axis. The number of bits after are reflected in orange with a different scale as shown in right axis. 
 
 ![bits](https://user-images.githubusercontent.com/57471582/205147042-a693f4c8-9469-42c2-bd76-2024c34d3671.jpg)
-summary results, size, compression error (cm scale), have noises in kinetics data in cm so our measures are nearly lossless (reference in the paper), percentage before and 
 
-scale are different from orange and blue curves, scale is different as show in left y axis for before, scale is different as shown in right y axis for 
 
 The graph illustrates the data size or file size once Posenet has saved the file in a stored location for the before results, and once reconstructed, the file size of the saved file after being stored. The yellow line represents the data size before compression, and the red line represents the data size after compression
-![Datasize](https://user-images.githubusercontent.com/57471582/205147065-e4849c20-ac02-4a5c-b9a2-c40010d1560b.jpg)
+
+![datasize](https://user-images.githubusercontent.com/57471582/205404358-aebea536-83d6-4917-b1b2-f7a77a1ee0cc.jpg)
 
 
 
