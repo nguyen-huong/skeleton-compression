@@ -65,6 +65,7 @@ By default,  we are using our proposed nonlinear quantization matrix as defined 
 
 ```
 python posenet.py –inc${CUSTOMIZE INCREMENT QUANTITY} –sub${CUSTOMIZE INITIAL INCREMENT VALUE}
+play around with 10, 100 (already have 50), see error, calculate error per joint (17 errors)
 ```
 
 # Activity Recognition using the Compressed File
