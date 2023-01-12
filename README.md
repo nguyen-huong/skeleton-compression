@@ -88,9 +88,8 @@ Our data have noises in cm and our measures are nearly lossless. The number of b
 
 The graph illustrates the data size or file size once Posenet has saved the file in a stored location for the before results, and once reconstructed, the file size of the saved file after being stored. The yellow line represents the data size before compression, and the red line represents the data size after compression
 
-change to file size before published
 
-![datasize](https://user-images.githubusercontent.com/57471582/205404358-aebea536-83d6-4917-b1b2-f7a77a1ee0cc.jpg)
+![datasize](https://user-images.githubusercontent.com/57471582/211971465-b52e7699-dbd1-4c93-ab68-e0fadb5f15fd.jpg)
 
 
 
