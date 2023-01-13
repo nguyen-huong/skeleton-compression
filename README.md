@@ -42,11 +42,13 @@ https://user-images.githubusercontent.com/57471582/198753246-aa14e805-2705-471d-
 # Prerequisites
 Python3 (>3.5)
 
+
+
 TensorFlow Lite
 
 Other Python libraries can be installed by pip install -r requirements.txt
 
-GPU 
+GPU Requirements
 
 # Installation
 ```
