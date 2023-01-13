@@ -48,7 +48,7 @@ TensorFlow Lite
 
 Other Python libraries can be installed by pip install -r requirements.txt
 
-GPU Requirements
+GPU Requirements: You do not need GPU for our algorithm, but it will be helpful for PoseNet
 
 # Installation
 ```
