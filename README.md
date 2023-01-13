@@ -46,6 +46,8 @@ TensorFlow Lite
 
 Other Python libraries can be installed by pip install -r requirements.txt
 
+GPU 
+
 # Installation
 ```
 git clone --recursive https://github.com/nguyen-huong/skel-compression.git
