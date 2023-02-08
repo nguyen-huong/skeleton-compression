@@ -67,6 +67,8 @@ python posenet.py –path ${PATH_TO_VIDEO} -store ${PATH_TO_STORAGE}
 
 By default,  we are using our proposed nonlinear quantization matrix as defined in the file quantizationmatrix.txt. We have already experimented with the choice of parameters, and heuristic parameters value are given in quantizationmatrix.txt and error of significance of 2 pixels per join.  However, if you want to use it you can define it here. 
 
+For more information on how the incremental values impact the error per joint, please refer to results
+
 ```
 python posenet.py –inc${CUSTOMIZE INCREMENT QUANTITY} –sub${CUSTOMIZE INITIAL INCREMENT VALUE}
 ```
@@ -94,7 +96,8 @@ The graph illustrates the data size or file size once Posenet has saved the file
 
 ![datasize](https://user-images.githubusercontent.com/57471582/211971465-b52e7699-dbd1-4c93-ab68-e0fadb5f15fd.jpg)
 
-
+## Quantization matrix
+Attached is our results on how the incremental values in the quantization matrix have an impact on our error rates calculated per joint. 
 
 ## Activity recognition performance: 
 We selected the following action classes provided—bowling, pullups, bench pressing, parkour, and cartwheeling for activity recognition performance from the Deepmind 400 Kinetics dataset[2] and resulted in an accuracy of 100% before and after if we use the original and the compressed signal. We have extracted on average 300 data points for each action, where 70% of the data is for training and 30% of the data is for testing.
