@@ -1,13 +1,9 @@
 numpy
 tensorflow
 matplotlib
-cv2
-os
+opencv-python
 timer-cm
-json
 argparse
-mediapipe
-multiprocessing
+mediapipe-silicone
 collections
 scipy.io
-scipy.fftpack
