@@ -99,6 +99,9 @@ The graph illustrates the data size or file size once Posenet has saved the file
 
 ## Quantization matrix
 Attached is our results on how the incremental values in the quantization matrix have an impact on our error rates calculated per joint. 
+![Error per joint by increment value](https://user-images.githubusercontent.com/57471582/219419656-8d5c96a4-d3b8-4cd6-a44b-68f3bfbecda4.png)
+
+Our spreadsheet for error per joint based on incremental value: https://docs.google.com/spreadsheets/d/1bA3bgG-rNIF6ZVHnAckLrQDbXQJ0N7Dc159UKGxzXlo/edit?usp=sharing
 
 ## Activity recognition performance: 
 We selected the following action classes provided—bowling, pullups, bench pressing, parkour, and cartwheeling for activity recognition performance from the Deepmind 400 Kinetics dataset[2] and resulted in an accuracy of 100% before and after if we use the original and the compressed signal. We have extracted on average 300 data points for each action, where 70% of the data is for training and 30% of the data is for testing.
