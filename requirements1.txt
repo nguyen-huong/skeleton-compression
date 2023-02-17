@@ -1,0 +1,13 @@
+numpy
+tensorflow
+matplotlib
+opencv-python
+protobuf-compiler
+cython
+pillow
+timer-cm
+cmake
+argparse
+mediapipe
+collections
+scipy.io
