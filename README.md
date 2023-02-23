@@ -99,7 +99,8 @@ The graph illustrates the data size or file size once Posenet has saved the file
 
 ## Quantization matrix
 Attached is our results on how the incremental values in the quantization matrix have an impact on our error rates calculated per joint. 
-![Error per joint by increment value](https://user-images.githubusercontent.com/57471582/219419656-8d5c96a4-d3b8-4cd6-a44b-68f3bfbecda4.png)
+![Error per joint by increment value](https://user-images.githubusercontent.com/57471582/220948057-d7588af2-f7b9-4395-8ede-77614e107a87.png)
+
 
 Our spreadsheet for error per joint based on incremental value: https://docs.google.com/spreadsheets/d/1bA3bgG-rNIF6ZVHnAckLrQDbXQJ0N7Dc159UKGxzXlo/edit?usp=sharing
 
