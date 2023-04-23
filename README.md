@@ -102,7 +102,7 @@ Attached is our results on how the incremental values in the quantization matrix
 
 <img width="1440" alt="Screenshot 2023-04-22 at 7 38 58 PM" src="https://user-images.githubusercontent.com/57471582/233816566-fc3bffc5-ba40-4ec7-ab63-d288a77f8165.png">
 
-
+The relationship between the number of joints and the error bit per joint, with different quantization matrix step sizes, has a variance ranging from 0.4 to 0.01 error, achieved with less than a pixel distance. Larger quantity quantization matrix step sizes may result in a more gradual increase in error with joint numbers, while others may result in a smaller error margin. Still, the fact that the error achieved is less than a pixel distance suggests that the accuracy of the joint estimation is high.
 
 Our spreadsheet for error per joint based on incremental value: https://docs.google.com/spreadsheets/d/1bA3bgG-rNIF6ZVHnAckLrQDbXQJ0N7Dc159UKGxzXlo/edit?usp=sharing
 
