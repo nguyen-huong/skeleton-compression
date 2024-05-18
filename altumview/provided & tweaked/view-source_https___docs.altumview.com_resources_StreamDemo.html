@@ -1,0 +1,209 @@
+<html>
+   <title>Skeleton Stream Demo</title>
+   <script src="https://docs.altumview.com/resources/js_libs/jquery.min.js"></script>
+   <script src="https://docs.altumview.com/resources/js_libs/mqttws31.min.js" type="text/javascript"></script>
+   <script src="https://docs.altumview.com/resources/js_libs/polyfill.min.js"></script>
+   <script type="text/javascript" language="javascript">
+      /*****************************************************************************************
+       * You must replace parameters with your own. Refer to the FAQ for more detail on how to configure them:
+       * https://docs.altumview.com/FAQ.pdf
+       * For demo, these settings are configured to an AltumView account on the Canadian server.
+       * If you do not see any skeleton rendering, the sensor is no longer available. 
+       * 
+       * Last updated: March 18, 2022 by Andrew A.
+      ******************************************************************************************/
+      // const oauthUrl = "https://oauth.ailecare.cn/v1.0";
+      // const apiUrl = "https://api.ailecare.cn/v1.0";
+      // const mqttUrl = "beijing.altumview.com.cn";
+      const oauthUrl = "https://oauth.altumview.com/v1.0/";
+      const apiUrl = "https://api.altumview.com/v1.0/";
+      const mqttUrl = "app.altumview.ca";
+      const clientId = "N4P6DT57vRSAwu0p";
+      const clientSecret = "tskOEQhYC8uuYhG1x1D4TWF41SdaX2Lw5ohbfP3SAHJBmI43uEb9Uk1lDf4aiqtk";
+      const serialNumber = "23E94A5DACD323EE"; // Use the mobile app to get the serial number
+      const streamToken = "2065073371"; // Call GET '/cameras/:id/streamtoken' endpoint to get Stream Token
+      const groupId = 1612; // Call GET '/info' endpoint to get Group ID
+
+      const getCredentials = () => {
+        $.ajax({
+          "type": "POST",
+          "url": `${oauthUrl}/token`,
+          "headers": {
+            "Content-Type": "application/x-www-form-urlencoded"
+          },
+          "data": {
+            "client_id": clientId,
+            "client_secret": clientSecret,
+            "grant_type": "client_credentials",
+            "scope": "camera:write camera:read",
+          },
+          "success": function(response) {
+            token = response.access_token;
+            console.log("token", token)
+            var url = `${apiUrl}/mqttAccount`;
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", url);
+            xhr.setRequestHeader("Authorization", "Bearer " + token);
+            xhr.onreadystatechange = function() {
+              if (xhr.readyState === 4) {
+                console.log(xhr.responseText)
+                const response = JSON.parse(xhr.responseText);
+                username = response.data.mqtt_account.username;
+                password = response.data.mqtt_account.passcode;
+                const canvasWidth = 960;
+                const canvasHeight = 540;
+                const onFailure = () => {
+                  const reconnectTimeout = 2000;
+                  console.log("Connect failed. Trying to reconnect after 2 sec");
+                  setTimeout(MQTTConnect, reconnectTimeout);
+                }
+
+                const onMessageArrived = (message) => {
+                  const byteList = message.payloadBytes
+                  const frameNum = parseStringInt32(byteList, 0)
+                  const numPeople = parseStringInt32(byteList, 4)
+
+                  const people = []
+                  for (let i = 0; i < numPeople; i++) {
+                    const pos = 8 + 152 * i;
+                    const personId = parseStringInt32(byteList, pos);
+                    const person = {};
+                    for (let j = 0; j < 18; j++) {
+                      const x = parseStringFloat(byteList, pos + 8 + j * 4);
+                      const y = parseStringFloat(byteList, pos + 80 + j * 4);
+                      if (x && y) person[j] = new Point(x, y);
+                    }
+                    person.name = personId;
+                    people.push(person);
+                  }
+
+                  const canvas = document.getElementById('canvas');
+                  if (canvas && people) {
+                    const ctx = canvas.getContext('2d');
+                    ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+
+                    people.forEach(person => {
+                      drawSkeleton(ctx, 4, person);
+                    })
+                  }
+                }
+
+                const drawSkeleton = (ctx, lineWidth, points) => {
+                  ctx.lineWidth = lineWidth;
+                  ctx.lineCap = 'round';
+
+                  let minX = 1;
+                  let minY = 1;
+                  pointPairs.forEach(pair => {
+                    const startPoint = points[pair.start];
+                    const endPoint = points[pair.end];
+                    if (startPoint !== undefined && endPoint !== undefined) {
+                      if (endPoint.x < minX) minX = endPoint.x;
+                      if (endPoint.y < minY) minY = endPoint.y;
+                      ctx.strokeStyle = pair.color;
+                      drawLine(ctx, startPoint.x * canvasWidth, startPoint.y * canvasHeight, endPoint.x * canvasWidth, endPoint.y * canvasHeight);
+                    }
+                  })
+                }
+
+                function Point(x, y) {
+                  this.x = x;
+                  this.y = y;
+                }
+
+                const drawLine = (ctx, x0, y0, x1, y1) => {
+                  ctx.beginPath();
+                  ctx.moveTo(x0, y0);
+                  ctx.lineTo(x1, y1);
+                  ctx.stroke();
+                }
+
+                const pointPairs = [
+                   { start: 0, end: 1, color: 'pink' },
+                   { start: 1, end: 2, color: 'orange' },
+                   { start: 2, end: 3, color: 'yellow' },
+                   { start: 3, end: 4, color: 'lightYellow' },
+                   { start: 1, end: 5, color: 'darkSalmon' },
+                   { start: 5, end: 6, color: 'salmon' },
+                   { start: 6, end: 7, color: 'lightSalmon' },
+                   { start: 1, end: 8, color: 'darkTurquoise' },
+                   { start: 8, end: 9, color: 'turquoise' },
+                   { start: 9, end: 10, color: 'paleTurquoise' },
+                   { start: 1, end: 11, color: 'darkRed' },
+                   { start: 11, end: 12, color: 'red' },
+                   { start: 12, end: 13, color: 'orange' },
+                   { start: 0, end: 14, color: 'purple' },
+                   { start: 14, end: 16, color: 'purple' },
+                   { start: 0, end: 15, color: 'violet' },
+                   { start: 15, end: 17, color: 'violet' }
+                 ]
+
+                const parseStringInt32 = (stringData, startIndex) => {
+                  const t = stringData.slice(startIndex, startIndex + 4);
+                  return new DataView(t.buffer).getInt32(0, true);
+                }
+
+                const parseStringFloat = (stringData, startIndex) => {
+                  const t = stringData.slice(startIndex, startIndex + 4);
+                  return new DataView(t.buffer).getFloat32(0, true);
+                }
+
+                const onConnect = () => {
+                  console.log('connect success');
+                  var soptions = {
+                    qos: 0
+                  };
+
+                  // Next, subscribe to this topic with the aforementioned stream token appended
+                  const subscribeTopic = `mobileClient/${groupId}/camera/${serialNumber}/skeleton/${streamToken}`;
+                  mqtt.subscribe(subscribeTopic, soptions);
+
+                  console.log(`subscribe to ${subscribeTopic}`);
+                  // Finally, publish the same stream token as a message to the camera in order to start streaming. You must publish this message every 45 seconds to keep streaming going.
+                  const publishTopic = `mobile/${groupId}/camera/${serialNumber}/token/mobileStreamToken`;
+                  message = new Paho.MQTT.Message(streamToken);
+                  message.destinationName = publishTopic;
+                  message.qos = 2;
+                  message.retained = false;
+                  mqtt.send(message);
+
+                  console.log("Connected");
+
+                  const reconnectTimeout = 44000;
+                  setTimeout(MQTTConnect, reconnectTimeout);
+                }
+
+                const MQTTConnect = async (id) => {
+                  const port = 8084;
+                  console.log(`connecting to ${mqttUrl}:${port}`);
+                  mqtt = new Paho.MQTT.Client(mqttUrl, port, username);
+                  const options = {
+                    timeout: 3,
+                    onSuccess: onConnect,
+                    onFailure: onFailure,
+                    useSSL: true,
+                    userName: username,
+                    password: password
+                  };
+                  mqtt.onMessageArrived = onMessageArrived;
+                  mqtt.connect(options);
+                }
+                MQTTConnect(1);
+              }
+            };
+            xhr.send();
+          },
+          "error": function(errorThrown) {
+            alert(JSON.stringify(errorThrown.error()));
+          }
+        });
+      }
+   </script>
+   <body>
+      <p>This is a demo of the Skeleton Streaming</p>
+      <canvas id="canvas" width="960" height="540" style="background-color: black; transform: scaleX(-1)"></canvas>
+      <script>
+         getCredentials();
+      </script>
+   </body>
+</html>
